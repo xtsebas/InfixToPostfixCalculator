@@ -1,6 +1,11 @@
 package Model;
 
 public class ListFactory {
+    /**
+     * uses the factory algorithm to create the stack with the User choice
+     * @param type
+     * @return
+     */
     public IStack ListFactory(String type){
 
         IStack InternStack = null;

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class InfixtoPostfix {
 
+    /**
+     * Transform an Arraylist to a string chain
+     * @param Array
+     * @return
+     */
     private String ArrayToString(ArrayList Array){
         StringBuilder result = new StringBuilder();
         for (Object c : Array){
@@ -12,6 +17,12 @@ public class InfixtoPostfix {
         String chain = result.toString();
         return chain;
     }
+
+    /**
+     * Transform a String chain to an Arraylist
+     * @param infix
+     * @return
+     */
     private ArrayList<String> StringToArray(String infix){
         ArrayList<String> ArrayInfix = new ArrayList<>();
 
@@ -22,13 +33,29 @@ public class InfixtoPostfix {
         return ArrayInfix;
     }
 
+    /**
+     * evaluates if the param is an operation or not
+     * @param value
+     * @return
+     */
     private boolean isOperation(String value){
         return value.equals("+") || value.equals("-") || value.equals("*") || value.equals("/");
     }
+
+    /**
+     * evaluates if the param is a parenthesis or not
+     * @param value
+     * @return
+     */
     private boolean isParenthesis(String value){
         return value.equals("(") || value.equals(")");
     }
 
+    /**
+     * Transform the infix expression to a Postfix expression, implements methods of this class
+     * @param Infix
+     * @return
+     */
     public String InfixtoPostfix(String Infix){
         IStack Operations = new StackArrayList();
         ArrayList<String> Numbers = new ArrayList<>();

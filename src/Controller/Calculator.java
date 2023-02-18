@@ -21,6 +21,11 @@ public class Calculator {
         instance_flag =true;
     }
 
+    /**
+     * Does the calculator if there's no
+     * @param value
+     * @return
+     */
     public static Calculator getInstance(String value){
         if (instance_flag){
             stackuwu_nia= list.ListFactory(value);
@@ -81,3 +86,6 @@ public class Calculator {
         return stackuwu_nia.pull();
     }
 }
+//CODIGO TOMADO DE LA HOJA DE TRABAJO 2
+//EQUIPO NUMERO 4
+//INTEGRANTES SEBASTIAN HUERTAS, XAVIER LOPEZ, GERSON RAMIREZ
