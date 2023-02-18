@@ -1,14 +1,22 @@
 package View;
 
+import Controller.Calculator;
 import Model.InfixtoPostfix;
 
-public class DriverProgram {
-    public static void main(String[] args) {
-        InfixtoPostfix a = new InfixtoPostfix();
-        String value= "(1+2)*9";
-        System.out.println(value);
-        String Postfix = a.InfixtoPostfix(value);
-        System.out.println(Postfix);
+import java.util.Scanner;
 
+public class DriverProgram {
+    static Scanner in= new Scanner(System.in);
+    static Calculator calculator;
+    public static void main(String[] args) {
+        System.out.println("BIENVENIDO A LA CALCULADORA DE TEXTO INFIX\n////////////////////////////" +
+                "\nPrimero, con cual stack desea realizar su porgrama (debe escribirlo)\nArrayList\nVector\nSingle List\nDouble List");
+        String option= in.nextLine();
+        calculator= Calculator.getInstance(option);
+        System.out.println("\nIngrese la operacion en INFIX que desea realizar:");
+        String infix= in.nextLine();
+        int result = calculator.mainOperation(infix);
+        System.out.println("\nUsted ingreso: " + infix + "\nSu resultado: " + result);
     }
+
 }
