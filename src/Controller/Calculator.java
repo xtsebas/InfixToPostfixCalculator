@@ -71,9 +71,6 @@ public class Calculator {
             if (!pc.isOperator(datum)) {
                 stackuwu_nia.push(Integer.valueOf(datum));
             }
-        }
-
-        for (String datum : data) {
             if (pc.isOperator(datum)) {
                 int A = stackuwu_nia.pull();
                 int B = stackuwu_nia.pull();
