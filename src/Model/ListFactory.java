@@ -1,12 +1,7 @@
 package Model;
 
-import structure.*;
-
-import java.util.Scanner;
-
 public class ListFactory {
-    private IStack ListFactory(String type){
-        Scanner in= new Scanner(System.in);
+    public IStack ListFactory(String type){
 
         IStack InternStack = null;
 
@@ -17,17 +12,11 @@ public class ListFactory {
             case ("vector"):
                 InternStack = new StackUsingVector<String>();
                 break;
-            case ("list"):
-                System.out.println("Usted quiere una lista: \n1. Simple Encadenada\n2. Doblemente Encadenada");
-                int i= in.nextInt();
-                switch (i){
-                    case 1:
-                        InternStack = new StackUsingSingleList<String>();
-                        break;
-                    case 2:
-                        InternStack = new StackUsingDoubleList<String>();
-                        break;
-                }
+            case ("single list"):
+                InternStack = new StackUsingSingleList<String>();
+                break;
+            case ("double list"):
+                InternStack = new StackUsingDoubleList<String>();
                 break;
         }
         return InternStack;
