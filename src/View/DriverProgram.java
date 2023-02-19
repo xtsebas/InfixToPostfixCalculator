@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Calculator;
+import Controller.ReadFile;
 import Model.InfixtoPostfix;
 
 import java.util.Scanner;
@@ -25,8 +26,7 @@ public class DriverProgram {
                 "\nPrimero, con cual stack desea realizar su porgrama (debe escribirlo)\nArrayList\nVector\nSingle List\nDouble List");
         String option= in.nextLine();
         calculator= Calculator.getInstance(option);
-        System.out.println("\nIngrese la operacion en INFIX que desea realizar:");
-        String infix= in.nextLine();
+        String infix= ReadFile.text("C:\\Users\\Sebastian\\OneDrive - Universidad del Valle de Guatemala\\Escritorio\\HDT4\\datos.txt");
         int result = calculator.mainOperation(infix);
         System.out.println("\nUsted ingreso: " + infix + "\nSu expresion en Postfix es: " + just.InfixtoPostfix(infix) +"\nSu resultado: " + result);
     }
